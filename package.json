@@ -1,0 +1,19 @@
+{
+  "name": "Pedro",
+  "version": "1.0.0",
+  "description": "next.js",
+  "main": "index.js",
+  "repository": "https://github.com/PeterGabrielVE/hola_mundo_next.git",
+  "author": "gaboleal123@gmail.com",
+  "license": "MIT",
+  "scripts":{
+	"dev":"next",
+	"build":"next build",
+	"start":"next start"
+	}, 
+  "dependencies": {
+    "next": "^9.0.7",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1"
+  }
+}
