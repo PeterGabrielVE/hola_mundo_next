@@ -1,6 +1,6 @@
 const Contenedor = (props)=>(
 	<div style={{
-		background:"#392FFF",
+		background:props.color,
 		textAlign:"center",
 		boder:"1px solid",
 		width:"800px",
@@ -30,14 +30,17 @@ function Seccion1(){
 }
 
 
-function Index(){
-	return(
-		<Contenedor>
+class Index extends React.Component{
+	render(){
+		return(
+		<Contenedor color="#392FFF">
 			<h1>Bienvenidos a mi App con NextJS</h1>
 			<p>Esta es mi primera aplicación con NextJS</p>
 			<Seccion1/>
 			</Contenedor>
 			)
+	}
+	
 }
 
 export default Index
