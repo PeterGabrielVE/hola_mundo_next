@@ -1,3 +1,5 @@
+import {BasicPicker} from 'react-color-tools'
+
 const Contenedor = (props)=>(
 	<div style={{
 		background:props.color,
@@ -43,6 +45,10 @@ class Index extends React.Component{
 			<h1>Bienvenidos a mi App con NextJS</h1>
 			<p>Esta es mi primera aplicación con NextJS</p>
 			<Seccion1/>
+			<BasicPicker
+				color={this.state.color}
+				onChange={(color)=>this.setState({color})}
+			/>
 			</Contenedor>
 			)
 	}
