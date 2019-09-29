@@ -31,9 +31,15 @@ function Seccion1(){
 
 
 class Index extends React.Component{
+
+	state ={
+		color:'#392FFF'
+	}
+
+
 	render(){
 		return(
-		<Contenedor color="#392FFF">
+		<Contenedor color={this.state.color}>
 			<h1>Bienvenidos a mi App con NextJS</h1>
 			<p>Esta es mi primera aplicación con NextJS</p>
 			<Seccion1/>
