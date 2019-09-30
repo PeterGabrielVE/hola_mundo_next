@@ -14,19 +14,19 @@ const Contenedor = (props)=>(
 	</div>
 
 	)
-function Figura1(){
+function Figura1(props){
 	return(
-		<img src="./static/logo-javascript.png" alt="" width="200px"/>
+		<img src={`./static/${props.imagen}`} alt="" width="200px"/>
 		)
 }
 
 
 
-function Seccion1(){
+function Seccion1(props){
 	return(
 		<section>
 			<h2>Esta es la seccion 1</h2>
-			<Figura1/>
+			<Figura1 imagen={props.imagen} />
 		</section>
 		)
 }
@@ -35,21 +35,36 @@ function Seccion1(){
 class Index extends React.Component{
 
 	state ={
-		color:'#392FFF'
+		color1:'#392FFF',
+		color2:'green'
 	}
 
 
 	render(){
+
+		const {color1,color2} = this.state
+
 		return(
-		<Contenedor color={this.state.color}>
-			<h1>Bienvenidos a mi App con NextJS</h1>
-			<p>Esta es mi primera aplicación con NextJS</p>
-			<Seccion1/>
-			<BasicPicker
-				color={this.state.color}
-				onChange={(color)=>this.setState({color})}
-			/>
-			</Contenedor>
+		<React.Fragment>
+			<Contenedor color={color1}>
+				<h1>Bienvenidos a mi App con NextJS</h1>
+				<p>Esta es mi primera aplicación con NextJS</p>
+				<Seccion1 imagen="logo-javascript.png" />
+				<BasicPicker
+					color={this.state.color}
+					onChange={(color1)=>this.setState({color1})}
+				/>
+			 </Contenedor>
+			 <Contenedor color={color2}>
+				<h1>Bienvenidos a mi App con NextJS</h1>
+				<p>Esta es mi primera aplicación con NextJS</p>
+				<Seccion1 imagen="logo-react.png" />
+				<BasicPicker
+					color={this.state.color}
+					onChange={(color2)=>this.setState({color2})}
+				/>
+			 </Contenedor>
+		</React.Fragment>	
 			)
 	}
 	
